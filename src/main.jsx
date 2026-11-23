@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
 import App from './App.jsx';
@@ -30,9 +30,9 @@ enableMocking()
     root.render(
       <StrictMode>
         <ApolloProvider client={client}>
-          <BrowserRouter basename={basePath}>
+          <HashRouter>
             <App />
-          </BrowserRouter>
+          </HashRouter>
         </ApolloProvider>
       </StrictMode>
     );
